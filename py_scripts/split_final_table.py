@@ -24,13 +24,11 @@ def split_final_table():
         if all_equal:
             data_row = {'Taz_num': Taz_num, 'year': row[2]}
             equal_data.append(data_row)
-            print("All elements in the row are equal")
         else:
             # data_row = {'Taz_num': Taz_num, 'year': row[2]}
             not_equal_data.append(row)
-            print("Not all elements in the row are equal")
 
     new_equal = pd.DataFrame(equal_data)
     new_not_equal = pd.DataFrame(not_equal_data)
-    new_equal.to_excel(r'C:\Users\dpere\Documents\JTMT\find_year_for_new_neighborhood_by_scenario\scenarios_by_first_year\scenario_by_first_year_equal.xlsx', index=False)
-    new_not_equal.to_excel(r'C:\Users\dpere\Documents\JTMT\find_year_for_new_neighborhood_by_scenario\scenarios_by_first_year\scenario_by_first_year_not_equal.xlsx', index=False)
+    new_equal.to_excel(r'C:\Users\dpere\Documents\JTMT\find_year_for_new_neighborhood_by_scenario\final\new_neighborhood_by_year_for_all_scenarios.xlsx', index=False)
+    new_not_equal.to_excel(r'C:\Users\dpere\Documents\JTMT\find_year_for_new_neighborhood_by_scenario\final\new_neighborhood_by_years_by_scenarios.xlsx', index=False)
