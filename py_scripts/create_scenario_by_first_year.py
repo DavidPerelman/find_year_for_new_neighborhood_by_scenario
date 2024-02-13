@@ -1,7 +1,7 @@
 import pandas as pd
 
-def create_scenario_by_first_year(scenario):
-    excel_scenario = pd.read_excel(r'C:\Users\dpere\Documents\JTMT\find_year_for_new_neighborhood_by_scenario\filter_2020_none_scenarios\filter_2020_none_{}.xlsx'.format(scenario))
+def create_scenario_by_first_year(software_path, scenario):
+    excel_scenario = pd.read_excel(r'{}\filter_2020_none_scenarios\filter_2020_none_{}.xlsx'.format(software_path, scenario))
 
     data = []
 
@@ -25,4 +25,4 @@ def create_scenario_by_first_year(scenario):
             print(f"No positive numbers found for row {index}")
 
     new_df = pd.DataFrame(data)
-    new_df.to_excel(r'C:\Users\dpere\Documents\JTMT\find_year_for_new_neighborhood_by_scenario\scenarios_by_first_year\scenario_by_first_year_{}.xlsx'.format(scenario), index=False)
+    new_df.to_excel(r'{}\scenarios_by_first_year\scenario_by_first_year_{}.xlsx'.format(software_path, scenario), index=False)

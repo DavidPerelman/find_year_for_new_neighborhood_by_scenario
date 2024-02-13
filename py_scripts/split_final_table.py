@@ -1,7 +1,7 @@
 import pandas as pd
 
-def split_final_table():
-    find_year_for_new_neighborhood_by_scenario = pd.read_excel(r'C:\Users\dpere\Documents\JTMT\find_year_for_new_neighborhood_by_scenario\find_year_for_new_neighborhood_by_scenario.xlsx')
+def split_final_table(software_path):
+    find_year_for_new_neighborhood_by_scenario = pd.read_excel(r'{}\find_year_for_new_neighborhood_by_scenario.xlsx'.format(software_path))
 
     equal_data = []
     not_equal_data = []
@@ -30,5 +30,5 @@ def split_final_table():
 
     new_equal = pd.DataFrame(equal_data)
     new_not_equal = pd.DataFrame(not_equal_data)
-    new_equal.to_excel(r'C:\Users\dpere\Documents\JTMT\find_year_for_new_neighborhood_by_scenario\final\new_neighborhood_by_year_for_all_scenarios.xlsx', index=False)
-    new_not_equal.to_excel(r'C:\Users\dpere\Documents\JTMT\find_year_for_new_neighborhood_by_scenario\final\new_neighborhood_by_years_by_scenarios.xlsx', index=False)
+    new_equal.to_excel(r'{}\final\new_neighborhood_by_year_for_all_scenarios.xlsx'.format(software_path), index=False)
+    new_not_equal.to_excel(r'{}\final\new_neighborhood_by_years_by_scenarios.xlsx'.format(software_path), index=False)
