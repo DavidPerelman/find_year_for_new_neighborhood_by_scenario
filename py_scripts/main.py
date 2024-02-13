@@ -13,19 +13,19 @@ software_path=df_inputs_outputs['location'][0]
 
 scenarios = ['housing_scenario', 'jtmt_scenario', 'trend_scenario']
 
-for scenario in scenarios:
-    filter_2020_none(software_path, scenario)
-
-for scenario in scenarios:
-    filter_2020_was_built(software_path, scenario)
-
-for scenario in scenarios:
-    create_scenario_by_first_year(software_path, scenario)
-
-merge_all_data(software_path)
-
-split_final_table(software_path)
-
-# sum_scnarios_was_built('jtmt_scenario')
 # for scenario in scenarios:
-#     sum_scnarios_was_built(scenario)
+#     filter_2020_none(software_path, scenario)
+
+# for scenario in scenarios:
+#     filter_2020_was_built(software_path, scenario)
+
+# for scenario in scenarios:
+#     create_scenario_by_first_year(software_path, scenario)
+
+# merge_all_data(software_path)
+
+# split_final_table(software_path)
+
+sum_scnarios_was_built(software_path, 'jtmt_scenario')
+for scenario in scenarios:
+    sum_scnarios_was_built(software_path, scenario)
