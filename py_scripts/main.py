@@ -15,6 +15,7 @@ software_path=df_inputs_outputs['location'][0]
 
 scenarios = ['housing_scenario', 'jtmt_scenario', 'trend_scenario']
 
+print('dsd')
 # סינון טבלאות שלא בנו בהן ב-2020
 for scenario in scenarios:
     filter_2020_none(software_path, scenario)
