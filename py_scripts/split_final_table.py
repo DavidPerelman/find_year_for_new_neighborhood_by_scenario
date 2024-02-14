@@ -1,7 +1,7 @@
 import pandas as pd
 
 def split_final_table(software_path):
-    find_year_for_new_neighborhood_by_scenario = pd.read_excel(r'{}\find_year_for_new_neighborhood_by_scenario.xlsx'.format(software_path))
+    find_year_for_new_neighborhood_by_scenario = pd.read_excel(r'{}\scenarios_by_first_year\find_year_for_new_neighborhood_by_scenario.xlsx'.format(software_path))
 
     equal_data = []
     not_equal_data = []
@@ -25,7 +25,6 @@ def split_final_table(software_path):
             data_row = {'Taz_num': Taz_num, 'year': row[2]}
             equal_data.append(data_row)
         else:
-            # data_row = {'Taz_num': Taz_num, 'year': row[2]}
             not_equal_data.append(row)
 
     new_equal = pd.DataFrame(equal_data)
