@@ -1,11 +1,8 @@
 import pandas as pd
 
-def sort_was_built_by_jump_percent(software_path):
-    melt_housing_scenario = pd.read_excel(r'{}\melt\melt_housing_scenario.xlsx'.format(software_path,))
-    melt_jtmt_scenario = pd.read_excel(r'{}\melt\melt_jtmt_scenario.xlsx'.format(software_path))
-    melt_trend_scenario = pd.read_excel(r'{}\melt\melt_trend_scenario.xlsx'.format(software_path))
+def sort_was_built_by_jump_percent(software_path, melted_was_built_by_years):
 
-    frames = [melt_housing_scenario, melt_jtmt_scenario, melt_trend_scenario]
+    frames = [melted_was_built_by_years[0], melted_was_built_by_years[1], melted_was_built_by_years[2]]
 
     result = pd.concat(frames)
 

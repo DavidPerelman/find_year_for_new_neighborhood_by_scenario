@@ -1,8 +1,6 @@
 import pandas as pd
 
-def create_scenario_by_first_year(software_path, scenario):
-    excel_scenario = pd.read_excel(r'{}\filter_2020_none_scenarios\filter_2020_none_{}.xlsx'.format(software_path, scenario))
-
+def create_scenario_by_first_year(excel_scenario):
     data = []
 
     # Iterate through each row in the DataFrame
@@ -10,6 +8,7 @@ def create_scenario_by_first_year(software_path, scenario):
         first_positive = None
         column_name = None
         Taz_num = row[0]
+        scenario = row[7]
         
         # Iterate through each element in the row
         for column, value in row[1:].items():
@@ -25,4 +24,4 @@ def create_scenario_by_first_year(software_path, scenario):
             print(f"No positive numbers found for row {index}")
 
     new_df = pd.DataFrame(data)
-    new_df.to_excel(r'{}\scenarios_by_first_year\scenario_by_first_year_{}.xlsx'.format(software_path, scenario), index=False)
+    return new_df

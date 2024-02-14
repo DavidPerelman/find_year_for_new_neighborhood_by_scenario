@@ -1,8 +1,6 @@
 import pandas as pd
 
-def split_final_table(software_path):
-    find_year_for_new_neighborhood_by_scenario = pd.read_excel(r'{}\scenarios_by_first_year\find_year_for_new_neighborhood_by_scenario.xlsx'.format(software_path))
-
+def split_final_table(software_path, find_year_for_new_neighborhood_by_scenario):
     equal_data = []
     not_equal_data = []
 

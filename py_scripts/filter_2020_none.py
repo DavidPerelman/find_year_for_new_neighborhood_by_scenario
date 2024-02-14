@@ -11,4 +11,6 @@ def filter_2020_none(software_path, scenario):
 
     sliced_df = filtered_table.loc[:, 'Taz_num':'add_aprt_2045_2050']
 
-    sliced_df.to_excel(r'{}\filter_2020_none_scenarios\filter_2020_none_{}.xlsx'.format(software_path, scenario), index=False)
+    sliced_df['scenario'] = scenario
+
+    return sliced_df

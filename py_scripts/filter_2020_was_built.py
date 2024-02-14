@@ -13,4 +13,6 @@ def filter_2020_was_built(software_path, scenario):
             'add_aprt_2035_2040', 'add_aprt_2040_2045', 'add_aprt_2045_2050']
     sliced_df = filtered_table[cols]
 
-    sliced_df.to_excel(r'{}\filter_2020_was_built_scenarios\filter_2020_was_built_{}.xlsx'.format(software_path, scenario), index=False)
+    sliced_df['scenario'] = scenario
+
+    return sliced_df
